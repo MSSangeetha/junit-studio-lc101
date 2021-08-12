@@ -25,11 +25,21 @@ public class BalancedBracketsTest {
 
     @Test
     public void stringWithBracketsReturnsTrue() {
-        assertTrue(BalancedBrackets.hasBalancedBrackets("[Sangeetha]"));
+        assertTrue(BalancedBrackets.hasBalancedBrackets("[]Sangeetha"));
     }
 
     @Test
     public void stringOnlyWithoutBracketsReturnFalse() {
         assertFalse(BalancedBrackets.hasBalancedBrackets("Sangeetha"));
+    }
+
+    @Test
+    public void stringWithOnlyOneBracketsReturnFalse() {
+        assertFalse(BalancedBrackets.hasBalancedBrackets("Sange[etha"));
+    }
+
+    @Test
+    public void stringWithReplacedBracketsReturnFalse() {
+        assertFalse(BalancedBrackets.hasBalancedBrackets("San]ge[etha"));
     }
 }
